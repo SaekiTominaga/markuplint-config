@@ -1,0 +1,22 @@
+{
+	"name": "markuplint-config-w0s",
+	"version": "1.0.0",
+	"description": "markuplint configuration file used on w0s.jp ",
+	"keywords": [
+		"markuplint"
+	],
+	"homepage": "https://github.com/SaekiTominaga/markuplint-config-w0s#readme",
+	"bugs": {
+		"url": "https://github.com/SaekiTominaga/markuplint-config-w0s/issues"
+	},
+	"license": "MIT",
+	"author": "Saeki Tominaga",
+	"main": ".markuplintrc",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SaekiTominaga/markuplint-config-w0s.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
