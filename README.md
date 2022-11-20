@@ -8,11 +8,11 @@
 
 一方で、このドキュメントでは `markuplint:recommended` と異なる部分について**なぜあえて変えているのか**を記しています。もし `markuplint:recommended` の設定に不満があるか、あるいはセカンドオピニオン的な意味で markuplint の開発者とは別の意見を見てみたいというのであれば本設定ファイルが参考になる部分もあるかもしれません。そのうえで、あなたのプロジェクトに適した部分があれば部分的に取り入れるのが良いと思います。
 
-もちろん熟考のうえであれば本設定ファイルをそのまま `extend` しても構いませんし、 Issue や Pull Request による改善提案は歓迎します。
+もちろん熟考のうえであれば本設定ファイルをそのまま `extends` しても構いませんし、 Issue や Pull Request による改善提案は歓迎します。
 
 ## `rules`
 
-`markuplint-recommended` との差異があるルールについて理由を記す。
+`markuplint:recommended`（バージョン 2.11.1 時点）との差異があるルールについて理由を記す。
 
 ### [`character-reference`](https://markuplint.dev/rules/character-reference)
 
@@ -20,19 +20,19 @@
 
 ### [`disallowed-element`](https://markuplint.dev/rules/disallowed-element)
 
-`markuplint-recommended` では `<hgroup>` 要素が無効にされている。その理由は [ルール策定時の Issue](https://github.com/markuplint/markuplint/issues/276) に書かれているように、2021年時点のアウトラインアルゴリズムの実情に沿ったものらしいが、その後2022年7月に HTML 仕様が改訂され、アウトラインアルゴリズムは廃止された。
+`markuplint:recommended` では `<hgroup>` 要素が無効にされている。その理由は [ルール策定時の Issue](https://github.com/markuplint/markuplint/issues/276) に書かれているように、2021年時点のアウトラインアルゴリズムの実情に沿ったものらしいが、その後2022年7月に HTML 仕様が改訂され、アウトラインアルゴリズムは廃止された。
 
 そのため、現在では `<hgroup>` 要素を使うデメリットはなくなった。もっとも現状は `role=generic` にマッピングされているため、逆に `<hgroup>` 要素を積極的に使うメリットもないと思う。 `role=group` に変更する議論もあるため、将来的にはメリットが生じる可能性もあるが、現状は古い仕様の解説をしている記事も多く、初心者は正確な使い方を学ぶのが難しいかもしれないため、引き続きプロジェクトルールで `<hgroup>` 要素を禁止し、グルーピングは `<div>` 要素を代替として使用する考え方もあるだろう。
 
-本設定ファイルは基本的に私が自サイトで使うことを前提としているため、 `<hgroup>` 要素の誤用の恐れはなく、 `markuplint-recommended` とは異なり `<hgroup>` 要素無効化はしないこととする。
+本設定ファイルは基本的に私が自サイトで使うことを前提としているため、 `<hgroup>` 要素の誤用の恐れはなく、 `markuplint:recommended` とは異なり `<hgroup>` 要素の無効化はしないこととする。
 
-一方、日本語サイト（のみ）を運営している関係上、 `<i>` 要素や `<u>` 要素を使う機会は皆無である。また `<embed>` 要素など他にも使わない要素はいくつか存在するが、管理するサイトごとに差異があるため、本設定ファイルでは設定せず、 `extend` する先での上書き指定で対応する。
+一方、日本語サイト（のみ）を運営している関係上、 `<i>` 要素や `<u>` 要素を使う機会は皆無である。また `<embed>` 要素など他にも使わない要素はいくつか存在するが、管理するサイトごとに差異があるため、本設定ファイルでは設定せず、 `extends` する先での上書き指定で対応する。
 
 ### [`invalid-attr`](https://markuplint.dev/rules/invalid-attr)
 
-`markuplint-recommended` では `autofocus` 属性を無効にされている。むやみに使うべきではないが、使用を禁止するほどではないと思うので本設定ファイルでは無効化していない。
+`markuplint:recommended` では `autofocus` 属性が無効にされている。むやみに使うべきではないが、使用を禁止するほどではないと思うので本設定ファイルでは無効化していない。
 
-`accesskey` 属性の無効化、および `tabindex` 属性の値を -1 と 0 のみに絞る設定は `markuplint-recommended` と同じとしている。
+`accesskey` 属性の無効化、および `tabindex` 属性の値を -1 と 0 のみに絞る設定は `markuplint:recommended` と同じとしている。
 
 ### [`no-use-event-handler-attr`](https://markuplint.dev/rules/no-use-event-handler-attr)
 
@@ -57,11 +57,11 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 一昔前は CSS セレクターとの兼ね合いで省略しない方が都合良い時代もあったが、 `:not()` 疑似クラスが使える現在では省略して問題が起こるケースはないと思う。
 
-### `markuplint-recommended` との差異一覧
+### `markuplint:recommended` との差異一覧
 
 #### Conformance checking
 
-| ルール名 | 本設定ファイル | `markuplint-recommended` |
+| ルール名 | 本設定ファイル | `markuplint:recommended` |
 | - | - | - |
 | `attr-duplication` | true | true |
 | `character-reference` | false | true |
@@ -78,7 +78,7 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 #### Accessibility
 
-| ルール名 | 本設定ファイル | `markuplint-recommended` |
+| ルール名 | 本設定ファイル | `markuplint:recommended` |
 | - | - | - |
 | `landmark-roles` | true | true |
 | `no-refer-to-non-existent-id` | true | true |
@@ -89,20 +89,20 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 #### Naming Convention
 
-| ルール名 | 本設定ファイル | `markuplint-recommended` |
+| ルール名 | 本設定ファイル | `markuplint:recommended` |
 | - | - | - |
 | `class-naming` | false | false |
 
 #### Maintenability
 
-| ルール名 | 本設定ファイル | `markuplint-recommended` |
+| ルール名 | 本設定ファイル | `markuplint:recommended` |
 | - | - | - |
 | `no-hard-code-id` | false | false |
 | `no-use-event-handler-attr` | true | false |
 
 #### Style
 
-| ルール名 | 本設定ファイル | `markuplint-recommended` |
+| ルール名 | 本設定ファイル | `markuplint:recommended` |
 | - | - | - |
 | `attr-equal-space-after` | "never" | false |
 | `attr-equal-space-before` | "never" | false |
@@ -117,30 +117,30 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 ## `nodeRules`
 
-`markuplint-recommended` にない独自ルールについて理由を記す。
+`markuplint:recommended`（バージョン 2.11.1 時点）にない本設定ファイル独自の設定内容について理由を記す。
 
 ### `html`
 
-`markuplint-recommended` では `lang` 属性の必須のみを設定している。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
+`markuplint:recommended` では `lang` 属性を必須に設定している。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
 
 ### `div`
 
-一切属性のない `<div>` 要素ほど意味のないものはないため、 `class` 属性を必須としている。本来は `<div lang="foo">` や `<div role="foo">` などもあり得るため、「何らかの属性が一つ以上あること」のチェックをしたいところだが、現状はたまたまそのようなことをしていないため `class` 属性の存在チェックで充分である。
+一切属性のない `<div>` 要素ほど意味のないものはないため、 [`required-attr`](https://markuplint.dev/rules/required-attr) ルールにて `class` 属性を必須としている。本来は `<div lang="foo">` や `<div role="foo">` などもあり得るため、「何らかの属性が一つ以上あること」のチェックをしたいところだが、現状はたまたまそのようなことをしていないため `class` 属性の存在チェックで充分である。
 
-ただし、以下の場合は属性なしを許可している。
+ただし、以下の場合は `class` 属性なしとするため `required-attr` を無効にしている。
 
 - `<dl>` 要素の子要素の場合
-- `<object>` 要素の子要素の場合（`<object aria-labelledby="object-label"><div id="object-label">...</div></object>` のように `id` 属性のみを設定している）
+- `<object>` 要素の子要素の場合（`<object aria-labelledby="object-label"><div id="object-label">...</div></object>` のように `id` 属性のみを設定したい）
 
 ### `object`
 
 `<object>` 要素は様々な外部リソースの埋め込みに使えるため、 `type` 属性と `role` 属性を必須とし、データのタイプを明示するようにしている。さらに `aria-labelledby` も必須として、前述のとおり `<object aria-labelledby="object-label"><div id="object-label">...</div></object>` のような形で支援技術が代替テキストを特定できるようにしている。
 
-基本的に画像は `<img>` 要素、動画は `<video>` 要素といったように極力専用の要素を使うため、 `<object>` 要素の使用箇所は少ないが、図表を表す画像など、代替テキストをリストや表で構造化したい場合は `<object>` 要素が適していることもある。 `<img>` 要素の代替テキストは属性値でしか表すことができない制約と、 `<object>` 要素のアクセシビリティサポーテッドの現状を踏まえるとこのような設定が良いのではないかと思われる。
+基本的に画像は `<img>` 要素、動画は `<video>` 要素といったように極力専用の要素を使うため、 `<object>` 要素の使用箇所は少ないが、複雑な図表を表す画像など、代替テキストをリストや表で構造化したい場合は `<object>` 要素が適していることもある。
 
 ### `thead th`, `tbody th`
 
-`<thead>` 要素と `<tbody>` 要素内の `<th>` 要素には `scope` 属性を必須としている。複雑な表でなければ `scope` 属性を設定する必要は薄いが、設定すること自体に大きなコストはかからないため、本サイトでは一律で設定するようにしている。
+`<thead>` 要素と `<tbody>` 要素内の `<th>` 要素には `scope` 属性を必須としている。複雑な表でなければ `scope` 属性を設定する必要性は薄いが、設定すること自体に大きなコストはかからないため、本サイトでは一律で設定するようにしている。
 
 ### `template *`
 
