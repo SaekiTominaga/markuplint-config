@@ -21,14 +21,14 @@
 | ルール名 | 本設定ファイル | `markuplint:recommended` | 差異 |
 | - | - | - | - |
 | `attr-duplication` | true | true | |
-| `character-reference` | false | true | ⚠ |
+| `character-reference` | false | true | [⚠](#character-reference) |
 | `deprecated-attr` | true | true | |
 | `deprecated-element` | true | true | |
-| `disallowed-element` | [] | ["hgroup"] | ⚠ |
+| `disallowed-element` | [] | ["hgroup"] | [⚠](#disallowed-element) |
 | `doctype` | true | true | |
 | `id-duplication` | true | true | |
 | `ineffective-attr` | true | true | |
-| `invalid-attr` | accesskey=disallowed & tabindex=-1,0 | autofocus=disallowed & accesskey=disallowed & tabindex=-1,0 | ⚠ |
+| `invalid-attr` | accesskey=disallowed & tabindex=-1,0 | autofocus=disallowed & accesskey=disallowed & tabindex=-1,0 | [⚠](#invalid-attr) |
 | `permitted-contents` | true | true | |
 | `required-attr` | true | true | |
 | `required-element` | false | false | |
@@ -55,22 +55,22 @@
 | ルール名 | 本設定ファイル | `markuplint:recommended` | 差異 |
 | - | - | - | - |
 | `no-hard-code-id` | false | false | |
-| `no-use-event-handler-attr` | true | false | ⚠ |
+| `no-use-event-handler-attr` | true | false | [⚠](#no-use-event-handler-attr) |
 
 #### Style
 
 | ルール名 | 本設定ファイル | `markuplint:recommended` | 差異 |
 | - | - | - | - |
-| `attr-equal-space-after` | "never" | false | ⚠ |
-| `attr-equal-space-before` | "never" | false | ⚠ |
-| `attr-spacing` | width=1 | false | ⚠ |
-| `attr-value-quotes` | "double" | false | ⚠ |
-| `case-sensitive-attr-name` | "lower" | false | ⚠ |
-| `case-sensitive-tag-name` | "lower" | false | ⚠ |
-| `end-tag` | true | false | ⚠ |
+| `attr-equal-space-after` | "never" | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `attr-equal-space-before` | "never" | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `attr-spacing` | width=1 | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `attr-value-quotes` | "double" | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `case-sensitive-attr-name` | "lower" | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `case-sensitive-tag-name` | "lower" | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
+| `end-tag` | true | false | [⚠](#attr-equal-space-after-attr-equal-space-before-attr-spacing-attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
 | `indentation` | false | false | |
-| `no-boolean-attr-value` | false | true | ⚠ |
-| `no-default-value` | true | false | ⚠ |
+| `no-boolean-attr-value` | false | true | [⚠](#no-boolean-attr-value) |
+| `no-default-value` | true | false | [⚠](#no-default-value) |
 
 ### 差異のあるルールの理由
 
