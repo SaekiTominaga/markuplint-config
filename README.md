@@ -4,7 +4,7 @@
 
 個人サイト [w0s.jp](https://w0s.jp/) で使用している markuplint の設定ファイルです。
 
-ひとりで運営している個人サイトに特化した設定なので、実際のプロジェクトにそのまま導入するのはお勧めしません。多くのケースでは [`markuplint:recommended`](https://markuplint.dev/configuration/#properties/extends) を利用するのが良いでしょう。
+ひとりで運営している個人サイトに特化した癖のある設定なので、実際のプロジェクトにそのまま導入するのはお勧めしません。多くのケースでは公式の [`markuplint:recommended`](https://markuplint.dev/configuration/#properties/extends) を利用するのが良いでしょう。
 
 一方で、このドキュメントでは `markuplint:recommended` と異なる部分について**なぜあえて変えているのか**を記しています。もし `markuplint:recommended` の適用に問題があるか、あるいはセカンドオピニオン的な意味で markuplint の開発者とは別の意見を見てみたいというのであれば本設定ファイルが参考になる部分もあるかもしれません。そのうえで、あなたのプロジェクトに適した部分があれば部分的に取り入れるのが良いと思います。
 
@@ -113,7 +113,7 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 #### [`no-default-value`](https://markuplint.dev/rules/no-default-value)
 
-個人的な好みであるが、 `<form method="get">` や `<input type="text" />` といったデフォルト値の属性は省略したい。
+個人的な好みであるが、 `<form method="get">` や `<input type="text" />` といったデフォルト値の属性は省略したいため、このルールは有効設定にしている。
 
 一昔前は CSS セレクターとの兼ね合いで省略しない方が都合良い時代もあったが、 `:not()` 疑似クラスが使える現在では省略して問題が起こるケースはないと思う。
 
@@ -123,15 +123,17 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 ### `html`
 
-`markuplint:recommended` では `lang` 属性を必須に設定している。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
+`markuplint:recommended` では `lang` 属性が必須に設定されている。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
 
 ### `div`
 
-一切属性のない `<div>` 要素ほど意味のないものはないため、 [`required-attr`](https://markuplint.dev/rules/required-attr) ルールにて `class` 属性を必須としている。本来は `<div lang="foo">` や `<div role="foo">` などもあり得るため、「何らかの属性が一つ以上あること」のチェックをしたいところだが、現状はたまたまそのようなことをしていないため `class` 属性の存在チェックで充分である。
+一切属性のない `<div>` 要素を配置するべきではないと考えている（`<dl>` 要素の子要素の場合を除く）。複雑なスタイルを表現したい場合、 CSS の都合で wrapper や inner 用の `<div>` 要素を差し込むこともあるだろう。とくに inner 用の場合、 `.component > div` のように指定すればクラス名を設定せずとも機能するが、それはあくまで制作者視点であり、ユーザー視点すなわちユーザースタイルシートの設定やスクレイピング、あるいは単に技術的興味のために HTML ソースコードを閲覧するユーザーに意図が伝わらないのは宜しくない。よってその場合も装飾用であることを伝えるクラス名を設定するべきだ。
 
-ただし、以下の場合は `class` 属性なしとするため `required-attr` を無効にしている。
+そのため [`required-attr`](https://markuplint.dev/rules/required-attr) ルールにて `class` 属性を必須としている。本来はクラス名に限らず `<div lang="foo">` や `<div role="foo">` などもあり得るため、「何らかの属性が一つ以上あること」のチェックをしたいところだが、そのようなルール設定ができないため、 `class` 属性の存在チェックとしている。
 
-- `<dl>` 要素の子要素の場合
+なお、以下の場合は `class` 属性なしのケースがあるため、上書き設定で `required-attr` を無効にしている。
+
+- `<dl>` 要素の子要素の場合（例外的に一切属性のない `<div>` 要素を許容したい）
 - `<object>` 要素の子要素の場合（`<object aria-labelledby="object-label"><div id="object-label">...</div></object>` のように `id` 属性のみを設定したい）
 
 ### `object`
