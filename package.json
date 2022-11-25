@@ -3,7 +3,8 @@
 	"version": "1.0.1",
 	"description": "markuplint configuration file used on w0s.jp",
 	"keywords": [
-		"markuplint"
+		"markuplint",
+		"markuplint-config"
 	],
 	"homepage": "https://github.com/SaekiTominaga/markuplint-config-w0s#readme",
 	"bugs": {
