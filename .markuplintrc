@@ -126,6 +126,7 @@
 			"selector": "object",
 			"rules": {
 				"required-attr": [
+					"data",
 					"type",
 					"role",
 					"aria-labelledby"
