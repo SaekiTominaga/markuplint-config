@@ -1,6 +1,6 @@
 {
 	"name": "markuplint-config-w0s",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "markuplint configuration file used on w0s.jp",
 	"keywords": [
 		"markuplint",
