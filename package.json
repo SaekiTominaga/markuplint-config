@@ -11,6 +11,9 @@
 	},
 	"license": "MIT",
 	"author": "Saeki Tominaga",
+	"files": [
+		""
+	],
 	"main": ".markuplintrc",
 	"repository": {
 		"type": "git",
