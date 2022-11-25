@@ -20,6 +20,13 @@
 		"type": "git",
 		"url": "git+https://github.com/SaekiTominaga/markuplint-config-w0s.git"
 	},
+	"scripts": {
+		"test:valid": "markuplint __tests__/valid/**/*.html",
+		"test:invalid": "markuplint __tests__/invalid/**/*.html"
+	},
+	"devDependencies": {
+		"markuplint": "^2.11.2"
+	},
 	"publishConfig": {
 		"access": "public"
 	}

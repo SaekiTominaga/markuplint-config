@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- html[prefix] -->
+<html lang="en" prefix="">
+	<head>
+		<title>`nodeRules` valid test</title>
+
+		<!-- OGP -->
+		<meta property="og:foo" content="value" />
+	</head>
+	<body>
+		<h1><code>nodeRules</code> valid test</h1>
+
+		<!-- dl > div -->
+		<dl>
+			<div>
+				<dt></dt>
+				<dd></dd>
+			</div>
+		</dl>
+
+		<!-- object, object > div -->
+		<object data="object" type="image/png" role="img" aria-labelledby="object-alt">
+			<div id="object-alt">alt</div>
+		</object>
+
+		<!-- thead th -->
+		<table>
+			<caption>
+				table
+			</caption>
+			<thead>
+				<tr>
+					<th scope="col">th</th>
+					<th scope="colgroup">th</th>
+				</tr>
+			</thead>
+		</table>
+
+		<!-- tbody th -->
+		<table>
+			<caption>
+				table
+			</caption>
+			<tbody>
+				<tr>
+					<th scope="row">th</th>
+					<th scope="rowgroup">th</th>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- template * -->
+		<template>
+			<button></button>
+		</template>
+	</body>
+</html>

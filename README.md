@@ -1,6 +1,7 @@
 # markuplint-config-w0s
 
 [![npm version](https://badge.fury.io/js/markuplint-config-w0s.svg)](https://badge.fury.io/js/markuplint-config-w0s)
+[![Build Status](https://github.com/SaekiTominaga/markuplint-config-w0s/actions/workflows/test.yml/badge.svg)](https://github.com/SaekiTominaga/markuplint-config-w0s/actions/workflows/test.yml)
 
 個人サイト [w0s.jp](https://w0s.jp/) で使用している markuplint の設定ファイルです。
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>`rules` valid test</title>
+	</head>
+	<body>
+		<h1><code>rules</code> valid test</h1>
+
+		<section>
+			<!-- character-reference -->
+
+			<p>> < & "</p>
+		</section>
+
+		<section>
+			<!-- deprecated-element -->
+
+			<hgroup>
+				<h3>hgroup</h3>
+			</hgroup>
+		</section>
+
+		<section>
+			<!-- invalid-attr -->
+
+			<p tabindex="-1"></p>
+			<p tabindex="0"></p>
+		</section>
+
+		<section>
+			<!-- no-hard-code-id -->
+
+			<p id="foo"></p>
+		</section>
+
+		<section>
+			<!-- no-boolean-attr-value -->
+
+			<button disabled>button</button>
+			<button disabled="">button</button>
+			<button disabled="disabled">button</button>
+		</section>
+	</body>
+</html>

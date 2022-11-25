@@ -1,0 +1,103 @@
+<!-- doctype -->
+<!-- required-h1 -->
+<html lang="en">
+	<head>
+		<title>`rules` invalid test</title>
+	</head>
+	<body>
+		<section>
+			<!-- attr-duplication -->
+
+			<p data-attr="value" data-Attr="value"></p>
+		</section>
+
+		<section>
+			<!-- deprecated-attr -->
+
+			<img src="path/to" alt="" align="top" />
+		</section>
+
+		<section>
+			<!-- deprecated-element -->
+
+			<font color="red">lorem</font>
+		</section>
+
+		<section>
+			<!-- id-duplication -->
+
+			<p id="a"></p>
+			<p id="a"></p>
+		</section>
+
+		<section>
+			<!-- ineffective-attr -->
+
+			<script type="module" src="/path/to/script.js" defer></script>
+		</section>
+
+		<section>
+			<!-- invalid-attr -->
+
+			<p accesskey="a"></p>
+			<p tabindex="1"></p>
+		</section>
+
+		<section>
+			<!-- permitted-contents -->
+
+			<ul>
+				Not allowed text node
+			</ul>
+		</section>
+
+		<section>
+			<!-- required-attr -->
+
+			<img />
+		</section>
+
+		<section>
+			<!-- landmark-roles -->
+
+			<nav></nav>
+			<nav></nav>
+
+			<main>
+				<aside></aside>
+			</main>
+		</section>
+
+		<section>
+			<!-- no-refer-to-non-existent-id -->
+
+			<label for="foo"></label>
+		</section>
+
+		<section>
+			<!-- require-accessible-name -->
+
+			<button></button>
+		</section>
+
+		<section>
+			<!-- wai-aria -->
+
+			<ul>
+				<li role="button">button</li>
+			</ul>
+		</section>
+
+		<section>
+			<!-- no-use-event-handler-attr -->
+
+			<p onclick="">click</p>
+		</section>
+
+		<section>
+			<!-- no-default-value -->
+
+			<label>label <input type="text"></label>
+		</section>
+	</body>
+</html>

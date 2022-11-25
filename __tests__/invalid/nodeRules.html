@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- html:not([lang]) -->
+<html>
+	<head>
+		<title>`nodeRules` invalid test</title>
+	</head>
+	<body>
+		<h1><code>nodeRules</code> invalid test</h1>
+
+		<!-- div:not([class]) -->
+		<div></div>
+
+		<!-- abbr:not([title]) -->
+		<abbr></abbr>
+
+		<!-- img:not([alt]) -->
+		<img src="" title="alt" />
+
+		<!-- iframe:not([title]) -->
+		<iframe></iframe>
+
+		<!-- object:not([type]) -->
+		<object data="object" role="img" aria-labelledby="object-alt1">
+			<div id="object-alt1">alt</div>
+		</object>
+
+		<!-- object:not([role]) -->
+		<object data="object" type="image/png" aria-labelledby="object-alt2">
+			<div id="object-alt2">alt</div>
+		</object>
+
+		<!-- object:not([aria-labelledby]) -->
+		<object data="object" type="image/png" role="img" aria-label="alt"></object>
+
+		<!-- thead th -->
+		<table>
+			<caption>
+				table
+			</caption>
+			<thead>
+				<tr>
+					<th>th</th>
+					<th scope="row">th</th>
+					<th scope="rowgroup">th</th>
+				</tr>
+			</thead>
+		</table>
+
+		<!-- tbody th -->
+		<table>
+			<caption>
+				table
+			</caption>
+			<tbody>
+				<tr>
+					<th>th</th>
+					<th scope="col">th</th>
+					<th scope="colgroup">th</th>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
