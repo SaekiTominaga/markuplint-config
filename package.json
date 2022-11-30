@@ -25,7 +25,7 @@
 		"test-invalid": "markuplint __tests__/invalid/**/*.html"
 	},
 	"devDependencies": {
-		"markuplint": "^2.11.2"
+		"markuplint": "^2.11.3"
 	},
 	"publishConfig": {
 		"access": "public"
