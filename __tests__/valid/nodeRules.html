@@ -4,34 +4,34 @@
 	<head>
 		<title>`nodeRules` valid test</title>
 
-		<!-- OGP -->
-		<meta property="og:foo" content="value" />
+		<!-- meta[property] -->
+		<meta property="og:foo" />
 	</head>
 	<body>
 		<h1><code>nodeRules</code> valid test</h1>
 
-		<!-- dl > div -->
+		<!-- dl > div:not([class]) -->
 		<dl>
 			<div>
-				<dt></dt>
-				<dd></dd>
+				<dt>text</dt>
+				<dd>text</dd>
 			</div>
 		</dl>
 
 		<!-- object, object > div -->
 		<object data="object" type="image/png" role="img" aria-labelledby="object-label">
-			<div id="object-label">label</div>
+			<div id="object-label">text</div>
 		</object>
 
 		<!-- thead th -->
 		<table>
 			<caption>
-				table
+				text
 			</caption>
 			<thead>
 				<tr>
-					<th scope="col">th</th>
-					<th scope="colgroup">th</th>
+					<th scope="col">text</th>
+					<th scope="colgroup">text</th>
 				</tr>
 			</thead>
 		</table>
@@ -39,12 +39,12 @@
 		<!-- tbody th -->
 		<table>
 			<caption>
-				table
+				text
 			</caption>
 			<tbody>
 				<tr>
-					<th scope="row">th</th>
-					<th scope="rowgroup">th</th>
+					<th scope="row">text</th>
+					<th scope="rowgroup">text</th>
 				</tr>
 			</tbody>
 		</table>
