@@ -7,7 +7,7 @@
 
 ひとりで運営している個人サイトに特化した癖のある設定なので、実際のプロジェクトにそのまま導入するのはお勧めしません。多くのケースでは公式の [`markuplint:recommended`](https://next.markuplint.dev/configuration/#properties/extends) を利用するのが良いでしょう。
 
-私はいくつかの理由から `markuplint:recommended` をそのまま利用することはせず、[プリセット](https://github.com/markuplint/markuplint/tree/main/packages/%40markuplint/config-presets)の中から特定のものを選択したうえで、 `rules` についてはすべてのルールを個別に設定しています。
+私はいくつかの理由から `markuplint:recommended` やそれ以外の[プリセット](https://github.com/markuplint/markuplint/tree/main/packages/%40markuplint/config-presets)をそのまま利用することはせず、有用なルールは部分的に取り入れながらも `rules` と `nodeRules` を独自に設定しています。
 
 このドキュメントでは `markuplint:recommended` と異なる部分について**なぜあえて変えているのか**その理由を記しています。もし `markuplint:recommended` の適用に問題があるか、あるいは markuplint の開発者とは別の意見を見てみたいというのであれば本設定ファイルが参考になる部分もあるかもしれません。そのうえで、あなたのプロジェクトに適した部分があれば部分的に取り入れるのが良いと思います。
 
