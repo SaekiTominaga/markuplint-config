@@ -82,7 +82,7 @@
 
 #### [`disallowed-element`](https://next.markuplint.dev/rules/disallowed-element)
 
-`markuplint:recommended` では [preset.a11y.json](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.a11y.json) において `<hgroup>` 要素が無効にされている。その理由は [ルール策定時の Issue](https://github.com/markuplint/markuplint/issues/276) に書かれているように、2021年時点のアウトラインアルゴリズムの実情に沿ったものらしいが、その後2022年7月に HTML 仕様が改訂され、アウトラインアルゴリズムは廃止された。
+`markuplint:recommended` では [`markuplint:a11y`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.a11y.json) において `<hgroup>` 要素が無効にされている。その理由は [ルール策定時の Issue](https://github.com/markuplint/markuplint/issues/276) に書かれているように、2021年時点のアウトラインアルゴリズムの実情に沿ったものらしいが、その後2022年7月に HTML 仕様が改訂され、アウトラインアルゴリズムは廃止された。
 
 そのため、現在では `<hgroup>` 要素を使うデメリットはなくなった。もっとも現状は `role=generic` にマッピングされているため、逆に `<hgroup>` 要素を積極的に使うメリットもないと思う。 `role=group` に変更する議論もあるため、将来的にはメリットが生じる可能性もあるが、現状は古い仕様の解説をしている記事も多く、初心者は正確な使い方を学ぶのが難しいかもしれないため、引き続きプロジェクトルールで `<hgroup>` 要素を禁止し、グルーピングは `<div>` 要素を代替として使用する考え方もあるだろう。
 
@@ -132,7 +132,7 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 ### `html`
 
-[`markuplint:a11y`](https://github.com/markuplint/markuplint/blob/dev/packages/%40markuplint/config-presets/src/preset.a11y.json) では `lang` 属性が必須に設定されている。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
+[`markuplint:a11y`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.a11y.json) では `lang` 属性が必須に設定されている。本設定ファイルではそれに加えて [OGP](https://ogp.me/) で必要な `prefix` 独自属性を許可する設定をしている。
 
 ### `meta[property]`
 
@@ -153,7 +153,7 @@ Prettier で自動整形しているため、必ずしも markuplint 側で気�
 
 ### `abbr`
 
-[`markuplint:a11y`](https://github.com/markuplint/markuplint/blob/dev/packages/%40markuplint/config-presets/src/preset.a11y.json) では `title` 属性が必須に設定されている。
+[`markuplint:a11y`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.a11y.json) では `title` 属性が必須に設定されている。
 
 HTML 仕様では `<abbr>` 要素における `title` 属性の設定は任意であるが、当サイトにおいては略語の完全表記を提供するケースでのみ `<abbr>` 要素を使用しているため、書き忘れのないよう本設定ファイルでは同じく `title` 属性を必須としている。
 
@@ -179,7 +179,7 @@ HTML 仕様では `<caption>` 要素の使い方として以下の記述があ�
 
 そのため `<table>` 要素が `<figure>` 要素内にあるいくつかのケースについて `<caption>` 要素の使用を禁じる設定をしている。
 
-[`markuplint:html-standard`](https://github.com/markuplint/markuplint/blob/dev/packages/%40markuplint/config-presets/src/preset.html-standard.json) にも似たような設定があるが、[使用できるセレクター](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector)が限定的なこともあり、仕様どおりのチェックをすることが難しい。そのため条件設定については不正確ではあるが、当サイトに於いてはひとつの `<figure>` 要素内に複数の `<table>` 要素を配置することは今のところなため、とりあえずこれで妥協している。
+[`markuplint:html-standard`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.html-standard.json) にも似たような設定があるが、[使用できるセレクター](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector)が限定的なこともあり、仕様どおりのチェックをすることが難しい。そのため条件設定については不正確ではあるが、当サイトに於いてはひとつの `<figure>` 要素内に複数の `<table>` 要素を配置することは今のところなため、とりあえずこれで妥協している。
 
 ### `thead th`, `tbody th`
 
