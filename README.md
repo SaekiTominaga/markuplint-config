@@ -187,4 +187,4 @@ HTML 仕様では `<caption>` 要素の使い方として以下の記述があ�
 
 ### `template *`
 
-`<template><a href=""></a></template>` のようなマークアップをすることがあるため、`<template>` 要素内では [`require-accessible-name`](https://next.markuplint.dev/rules/require-accessible-name) を無効にしている。
+`<template><a href=""></a></template>` のようなマークアップをすることがあるため、`<template>` 要素内では [`no-empty-palpable-content`](https://next.markuplint.dev/rules/no-empty-palpable-content) と [`require-accessible-name`](https://next.markuplint.dev/rules/require-accessible-name) を無効にしている。
