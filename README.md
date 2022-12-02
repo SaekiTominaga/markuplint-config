@@ -179,7 +179,7 @@ HTML 仕様では `<caption>` 要素の使い方として以下の記述があ�
 
 そのため `<table>` 要素が `<figure>` 要素内にあるいくつかのケースについて `<caption>` 要素の使用を禁じる設定をしている。
 
-[`markuplint:html-standard`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.html-standard.json) にも似たような設定があるが、[使用できるセレクター](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector)が限定的なこともあり、仕様どおりのチェックをすることが難しい。そのため条件設定については不正確ではあるが、当サイトに於いてはひとつの `<figure>` 要素内に複数の `<table>` 要素を配置することは今のところなため、とりあえずこれで妥協している。
+[`markuplint:html-standard`](https://github.com/markuplint/markuplint/blob/main/packages/%40markuplint/config-presets/src/preset.html-standard.json) にも似たような設定があるが、[使用できるセレクター](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector)が限定的なこともあり、仕様どおりのチェックをすることが難しい。そのため条件設定については不正確ではあるが、当サイトに於いてはひとつの `<figure>` 要素内に複数の `<table>` 要素を配置するケースは今のところ存在しないため、とりあえずこれで妥協している。
 
 ### `thead th`, `tbody th`
 
