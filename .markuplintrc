@@ -165,6 +165,18 @@
 			}
 		},
 		{
+			"selector": "td",
+			"rules": {
+				"no-empty-palpable-content": false
+			}
+		},
+		{
+			"selector": "output",
+			"rules": {
+				"no-empty-palpable-content": false
+			}
+		},
+		{
 			"selector": "template *",
 			"rules": {
 				"no-empty-palpable-content": false,
