@@ -21,10 +21,12 @@
 		"url": "git+https://github.com/SaekiTominaga/markuplint-config.git"
 	},
 	"scripts": {
-		"test-valid": "markuplint __tests__/valid/**/*.html",
-		"test-invalid": "markuplint __tests__/invalid/**/*.html"
+		"test-valid": "markuplint -c __tests__/.markuplintrc __tests__/valid/**/*.html",
+		"test-invalid": "markuplint -c __tests__/.markuplintrc __tests__/invalid/**/*.html",
+		"test-parser": "markuplint -c __tests__/.markuplintrc __tests__/parser/**/*"
 	},
 	"devDependencies": {
+		"@markuplint/ejs-parser": "^3.0.0-rc.1",
 		"markuplint": "^3.0.0-rc.1"
 	},
 	"publishConfig": {

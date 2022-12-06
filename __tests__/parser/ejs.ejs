@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EJS parer test</title>
+	</head>
+	<body>
+		<h1>EJS parer test</h1>
+
+		<!-- tags -->
+		<p><% foo %></p>
+		<p><%_ foo %></p>
+		<p><%= foo %></p>
+		<p><%- foo %></p>
+		<p><%# foo %></p>
+		<p><%% foo %></p>
+		<p><% foo -%></p>
+		<p><% foo _%></p>
+
+		<!-- require-accessible-name -->
+		<form>
+			<% if (value) { %>
+			<label for="label">text</label>
+			<input name="foo" value="<%= value =%>" id="label" />
+			<% } else { %>
+			<label for="label">text</label>
+			<input name="foo" id="label" />
+			<% } %>
+		</form>
+	</body>
+</html>
