@@ -27,7 +27,7 @@
 		"end-tag": true,
 		"ineffective-attr": true,
 		"invalid-attr": {
-			"option": {
+			"options": {
 				"attrs": {
 					"accesskey": {
 						"disallowed": true
@@ -49,7 +49,7 @@
 			"selector": "html",
 			"rules": {
 				"invalid-attr": {
-					"option": {
+					"options": {
 						"ignoreAttrNamePrefix": [
 							"prefix"
 						]
@@ -64,7 +64,7 @@
 			"selector": "meta[property]",
 			"rules": {
 				"invalid-attr": {
-					"option": {
+					"options": {
 						"attrs": {
 							"property": {
 								"pattern": "/^og:.+/"
