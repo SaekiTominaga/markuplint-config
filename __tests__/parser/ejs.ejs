@@ -15,16 +15,5 @@
 		<p><%% foo %></p>
 		<p><% foo -%></p>
 		<p><% foo _%></p>
-
-		<!-- require-accessible-name -->
-		<form>
-			<% if (value) { %>
-			<label for="label">text</label>
-			<input name="foo" value="<%= value =%>" id="label" />
-			<% } else { %>
-			<label for="label">text</label>
-			<input name="foo" id="label" />
-			<% } %>
-		</form>
 	</body>
 </html>
