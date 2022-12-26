@@ -69,7 +69,7 @@
 | `attr-value-quotes` | "double" | ― | [⚠](#attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
 | `case-sensitive-attr-name` | "lower" | ― | [⚠](#attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
 | `case-sensitive-tag-name` | "lower" | ― | [⚠](#attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
-| `character-reference` | false | true | [⚠](#character-reference) |
+| `character-reference` | true | true | |
 | `end-tag` | true | ― | [⚠](#attr-value-quotes-case-sensitive-attr-name-case-sensitive-tag-name-end-tag) |
 | `ineffective-attr` | true | true | |
 | `invalid-attr` | { `accesskey`, `tabindex` } | { `autofocus`, `accesskey`, `tabindex` } | [⚠](#invalid-attr) |
@@ -107,10 +107,6 @@
 Prettier で自動整形しているため、必ずしも markuplint 側で気にする必要はないのだが、一応一般的なフォーマットを設定している。
 
 これら4つのルールはおそらくほとんどのプロジェクトでそのまま導入できる設定であり、異論も少ないと思うので、根拠の説明は省略する。
-
-#### [`character-reference`](https://markuplint.dev/ja/docs/rules/character-reference)
-
-当サイトでは [HTML ファイルのビルド](https://github.com/SaekiTominaga/w0s.jp/blob/main/node/src/build/Html.ts)に際して [jsdom](https://www.npmjs.com/package/jsdom) を使用しているが、その過程で `&quot;` は `"` に変換され、このルールを有効にするとビルド後ファイルがチェックに引っかかってしまうので無効にしている。
 
 #### [`invalid-attr`](https://markuplint.dev/ja/docs/rules/invalid-attr)
 
