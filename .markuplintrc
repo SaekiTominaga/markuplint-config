@@ -182,6 +182,12 @@
 				"no-empty-palpable-content": false,
 				"require-accessible-name": false
 			}
+		},
+		{
+			"selector": ":has(> template)",
+			"rules": {
+				"wai-aria": false
+			}
 		}
 	]
 }
