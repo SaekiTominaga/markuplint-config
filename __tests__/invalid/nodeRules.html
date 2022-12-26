@@ -3,15 +3,20 @@
 <html>
 	<head>
 		<title>`nodeRules` invalid test</title>
+
+		<!-- meta[property] -->
+		<meta property="" />
+		<meta property="og:" />
+		<meta property="foo:bar" />
 	</head>
 	<body>
 		<h1><code>nodeRules</code> invalid test</h1>
 
 		<!-- div:not([class]) -->
-		<div></div>
+		<div>text</div>
 
 		<!-- abbr:not([title]) -->
-		<abbr></abbr>
+		<abbr>text</abbr>
 
 		<!-- img:not([alt]) -->
 		<img src="" title="alt" />
@@ -21,27 +26,56 @@
 
 		<!-- object:not([type]) -->
 		<object data="object" role="img" aria-labelledby="object-label1">
-			<div id="object-label1">label</div>
+			<div id="object-label1">text</div>
 		</object>
 
 		<!-- object:not([role]) -->
 		<object data="object" type="image/png" aria-labelledby="object-label2">
-			<div id="object-label2">label</div>
+			<div id="object-label2">text</div>
 		</object>
 
 		<!-- object:not([aria-labelledby]) -->
-		<object data="object" type="image/png" role="img" aria-label="label"></object>
+		<object data="object" type="image/png" role="img" aria-label="label">text</object>
+
+		<!-- figcaption ~ table, table:has(~ figcaption) -->
+		<figure>
+			<figcaption>text</figcaption>
+			<table>
+				<caption>
+					text
+				</caption>
+				<tbody>
+					<tr>
+						<td>text</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+
+		<figure>
+			<table>
+				<caption>
+					text
+				</caption>
+				<tbody>
+					<tr>
+						<td>text</td>
+					</tr>
+				</tbody>
+			</table>
+			<figcaption>text</figcaption>
+		</figure>
 
 		<!-- thead th -->
 		<table>
 			<caption>
-				table
+				text
 			</caption>
 			<thead>
 				<tr>
-					<th>th</th>
-					<th scope="row">th</th>
-					<th scope="rowgroup">th</th>
+					<th>text</th>
+					<th scope="row">text</th>
+					<th scope="rowgroup">text</th>
 				</tr>
 			</thead>
 		</table>
@@ -49,13 +83,13 @@
 		<!-- tbody th -->
 		<table>
 			<caption>
-				table
+				text
 			</caption>
 			<tbody>
 				<tr>
-					<th>th</th>
-					<th scope="col">th</th>
-					<th scope="colgroup">th</th>
+					<th>text</th>
+					<th scope="col">text</th>
+					<th scope="colgroup">text</th>
 				</tr>
 			</tbody>
 		</table>

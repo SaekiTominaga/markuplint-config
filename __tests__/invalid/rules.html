@@ -8,7 +8,7 @@
 		<section>
 			<!-- attr-duplication -->
 
-			<p data-attr="value" data-Attr="value"></p>
+			<p data-attr="value" data-Attr="value">text</p>
 		</section>
 
 		<section>
@@ -20,27 +20,21 @@
 		<section>
 			<!-- deprecated-element -->
 
-			<font color="red">lorem</font>
+			<font color="red">text</font>
 		</section>
 
 		<section>
 			<!-- id-duplication -->
 
-			<p id="a"></p>
-			<p id="a"></p>
+			<p id="a">text</p>
+			<p id="a">text</p>
 		</section>
 
 		<section>
-			<!-- ineffective-attr -->
+			<!-- no-empty-palpable-content -->
 
-			<script type="module" src="/path/to/script.js" defer></script>
-		</section>
-
-		<section>
-			<!-- invalid-attr -->
-
-			<p accesskey="a"></p>
-			<p tabindex="1"></p>
+			<p></p>
+			<span></span>
 		</section>
 
 		<section>
@@ -58,20 +52,26 @@
 		</section>
 
 		<section>
+			<!-- label-has-control -->
+
+			<img />
+		</section>
+
+		<section>
 			<!-- landmark-roles -->
 
-			<nav></nav>
-			<nav></nav>
+			<nav>text</nav>
+			<nav>text</nav>
 
 			<main>
-				<aside></aside>
+				<aside>text</aside>
 			</main>
 		</section>
 
 		<section>
 			<!-- no-refer-to-non-existent-id -->
 
-			<label for="foo"></label>
+			<label for="foo">text</label>
 		</section>
 
 		<section>
@@ -84,14 +84,33 @@
 			<!-- wai-aria -->
 
 			<ul>
-				<li role="button">button</li>
+				<li role="button">text</li>
 			</ul>
 		</section>
 
 		<section>
 			<!-- no-use-event-handler-attr -->
 
-			<p onclick="">click</p>
+			<p onclick="">text</p>
+		</section>
+
+		<section>
+			<!-- end-tag -->
+
+			<span>text
+		</section>
+
+		<section>
+			<!-- ineffective-attr -->
+
+			<script type="module" src="/path/to/script.js" defer></script>
+		</section>
+
+		<section>
+			<!-- invalid-attr -->
+
+			<p accesskey="a">text</p>
+			<p tabindex="1">text</p>
 		</section>
 
 		<section>

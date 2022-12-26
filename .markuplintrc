@@ -1,15 +1,33 @@
 {
 	"rules": {
 		"attr-duplication": true,
-		"character-reference": false,
 		"deprecated-attr": true,
 		"deprecated-element": true,
 		"disallowed-element": [],
 		"doctype": true,
 		"id-duplication": true,
+		"no-empty-palpable-content": true,
+		"permitted-contents": true,
+		"required-attr": true,
+		"required-element": false,
+		"label-has-control": true,
+		"landmark-roles": true,
+		"no-refer-to-non-existent-id": true,
+		"require-accessible-name": true,
+		"required-h1": true,
+		"use-list": false,
+		"wai-aria": true,
+		"class-naming": false,
+		"no-hard-code-id": false,
+		"no-use-event-handler-attr": true,
+		"attr-value-quotes": "double",
+		"case-sensitive-attr-name": "lower",
+		"case-sensitive-tag-name": "lower",
+		"character-reference": false,
+		"end-tag": true,
 		"ineffective-attr": true,
 		"invalid-attr": {
-			"option": {
+			"options": {
 				"attrs": {
 					"accesskey": {
 						"disallowed": true
@@ -23,30 +41,6 @@
 				}
 			}
 		},
-		"permitted-contents": true,
-		"required-attr": true,
-		"required-element": false,
-		"landmark-roles": true,
-		"no-refer-to-non-existent-id": true,
-		"require-accessible-name": true,
-		"required-h1": true,
-		"use-list": false,
-		"wai-aria": true,
-		"class-naming": false,
-		"no-hard-code-id": false,
-		"no-use-event-handler-attr": true,
-		"attr-equal-space-after": "never",
-		"attr-equal-space-before": "never",
-		"attr-spacing": {
-			"option": {
-				"width": 1
-			}
-		},
-		"attr-value-quotes": "double",
-		"case-sensitive-attr-name": "lower",
-		"case-sensitive-tag-name": "lower",
-		"end-tag": true,
-		"indentation": false,
 		"no-boolean-attr-value": false,
 		"no-default-value": true
 	},
@@ -55,7 +49,7 @@
 			"selector": "html",
 			"rules": {
 				"invalid-attr": {
-					"option": {
+					"options": {
 						"ignoreAttrNamePrefix": [
 							"prefix"
 						]
@@ -70,10 +64,10 @@
 			"selector": "meta[property]",
 			"rules": {
 				"invalid-attr": {
-					"option": {
+					"options": {
 						"attrs": {
 							"property": {
-								"pattern": "/^og:[a-z_]+/"
+								"pattern": "/^og:.+/"
 							},
 							"content": {
 								"type": "NoEmptyAny"
@@ -134,6 +128,15 @@
 			}
 		},
 		{
+			"selector": "figcaption ~ table, table:has(~ figcaption)",
+			"rules": {
+				"disallowed-element": [
+					"caption"
+				],
+				"require-accessible-name": false
+			}
+		},
+		{
 			"selector": "thead th",
 			"rules": {
 				"required-attr": [
@@ -162,9 +165,28 @@
 			}
 		},
 		{
+			"selector": "td",
+			"rules": {
+				"no-empty-palpable-content": false
+			}
+		},
+		{
+			"selector": "output",
+			"rules": {
+				"no-empty-palpable-content": false
+			}
+		},
+		{
 			"selector": "template *",
 			"rules": {
+				"no-empty-palpable-content": false,
 				"require-accessible-name": false
+			}
+		},
+		{
+			"selector": ":has(> template)",
+			"rules": {
+				"wai-aria": false
 			}
 		}
 	]

@@ -1,6 +1,6 @@
 {
 	"name": "@w0s/markuplint-config",
-	"version": "1.0.4",
+	"version": "2.0.0-rc.1",
 	"description": "markuplint configuration file used on w0s.jp",
 	"keywords": [
 		"markuplint",
@@ -21,11 +21,13 @@
 		"url": "git+https://github.com/SaekiTominaga/markuplint-config.git"
 	},
 	"scripts": {
-		"test-valid": "markuplint __tests__/valid/**/*.html",
-		"test-invalid": "markuplint __tests__/invalid/**/*.html"
+		"test-valid": "markuplint -c __tests__/.markuplintrc __tests__/valid/**/*.html",
+		"test-invalid": "markuplint -c __tests__/.markuplintrc __tests__/invalid/**/*.html",
+		"test-parser": "markuplint -c __tests__/.markuplintrc __tests__/parser/**/*"
 	},
 	"devDependencies": {
-		"markuplint": "^2.11.3"
+		"@markuplint/ejs-parser": "^3.0.0",
+		"markuplint": "^3.0.0"
 	},
 	"publishConfig": {
 		"access": "public"
